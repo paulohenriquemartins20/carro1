@@ -113,7 +113,7 @@
 
                 setTimeout(function() {
                     // let a1 = document.querySelector(".a").innerHTML = so1.toFixed(0) + " litros";
-                    let b1 = document.querySelector(".b").innerHTML = so2.toFixed(2) + " tanque de gasolina"
+                    let b1 = document.querySelector(".b").innerHTML = so2.toFixed(1) + " tanque de gasolina"
                     let c1 = document.querySelector(".c").innerHTML = so3.toFixed(1) + "$ Tanque cheio"
                     let c10 = document.querySelector(".d").innerHTML = so4.toFixed(1) + " hora que vai gasta pra chegar seu destino!"
                         //let d1 = document.querySelector(".d").innerHTML
@@ -122,8 +122,8 @@
                 setTimeout(function() {
 
                     if (so2.toFixed(1) < 1) {
-                        let tt = quantocabetanque * so2 / 100
-                        alert(so2.toFixed(1) + " = " + tt.toFixed(1) + "0" + " litros de gasolina")
+                        let tt = quantocabetanque * so2 / 100;
+                        alert(so2.toFixed(1) + " = " + tt.toFixed(3) + "0" + " litros de gasolina")
                         so2.toFixed(1)
                         tt.toFixed(1)
                     }
