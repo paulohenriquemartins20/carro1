@@ -1,0 +1,152 @@
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url(./foto/gasolina2.png);
+            font-size: 14px;
+        }
+        
+        .ve {
+            width: 400px;
+            height: 500px;
+            border: 3px solid red;
+            margin: auto;
+            color: red;
+            background-image: url(./foto/img2.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+        
+        input {
+            margin-left: 100px;
+            width: 60px;
+        }
+        
+        .menu {
+            position: absolute;
+            width: 200px;
+            height: 300px;
+            background-color: black;
+            display: none;
+            color: red;
+            border: 2px solid yellow;
+            box-shadow: 10px 10px 9px red;
+        }
+        
+        @media only screen and (max-width:400px) {
+            .ve {
+                width: 299px;
+                height: 600px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="menu" onmousedown="clickk()">
+
+        <ul type="square">
+
+            <li class="b">aguarde pf...</li>
+            <li class="c">aguarde pf...</li>
+            <li class="d">aguarde pf...</li>
+
+        </ul>
+
+
+    </div>
+    <div class="ve">
+
+        <h2>Quantos km ate o local de destino?</h2>
+        <input type="text" class="text1" placeholder="aqui" />
+        <h3>Quantos km seu carro faz com 1 litro de gasolina?</h3>
+        <input type="text" class="text2" placeholder="aqui" />
+        <h3>Preço atual da gasolina?</h3>
+
+        <input type="text" class="text3" placeholder="aqui" />
+        <h3>Quantidade de gasolina que seu tanque cabe?</h3>
+        <input type="text" class="text4" placeholder="aqui" />
+        <br>
+        <h3>km por hora voce vai (hora fixed) ?</h3>
+        <input type="text" class="text5" placeholder="aqui" />
+        <br>
+        <br>
+        <br>
+
+        <br>
+        <br>
+        <br>
+
+        <input type="submit" value="calcular" class="bot" />
+
+    </div>
+
+
+
+
+    <script>
+        alert("seja todos bem vindos! Sou PAULO HENRIQUE MR , vou mostra a hora que voce vai chegar ao seu Determinado destino, e o quanto de dinheiro voces vao gasta para enche o tanque de seu carro ou moto , etc.")
+        window.onload = function() {
+
+            let acao = document.querySelector(".bot").addEventListener("click", function() {
+                let destino = document.querySelector(".text1").value
+                let litro = document.querySelector(".text2").value
+                let gasolinapreco = document.querySelector(".text3").value
+                let quantocabetanque = document.querySelector(".text4").value
+                let kmpohora = document.querySelector(".text5").value
+
+                let so1 = destino / litro;
+
+                //document.write("Seu carro vai gasta ", so1, " litros de gasolina ate o destino.. ")
+                let so2 = so1 / quantocabetanque
+                    // document.write(" >>> vai gasta ", so2, " tanque")
+                let so3 = quantocabetanque * gasolinapreco
+                    // document.write(" >>>com tanque cheio vc vai gasta ", so3, " de  gasolina")
+                    // -------------------
+                let so4 = destino / kmpohora;
+
+                setTimeout(function() {
+                    // let a1 = document.querySelector(".a").innerHTML = so1.toFixed(0) + " litros";
+                    let b1 = document.querySelector(".b").innerHTML = so2.toFixed(1) + " tanque de gasolina"
+                    let c1 = document.querySelector(".c").innerHTML = so3.toFixed(1) + "$ Tanque cheio"
+                    let c10 = document.querySelector(".d").innerHTML = so4.toFixed(1) + " hora que vai gasta pra chegar seu destino!"
+                        //let d1 = document.querySelector(".d").innerHTML
+                }, 3000)
+
+                setTimeout(function() {
+
+                    if (so2.toFixed(1) < 1) {
+                        let tt = quantocabetanque * so2 / 100
+                        alert(so2.toFixed(1) + " = " + tt.toFixed(1) + "0" + " litros de gasolina")
+                        so2.toFixed(1)
+                        tt.toFixed(1)
+                    }
+                }, 4900)
+
+
+                // para amanha vou fazer um aleret se o nume fro 0.1 ai vou peg a a porcetagem do 45 * 0.1 /100 ai vou sabe os litros de gasolina
+                document.querySelector(".menu").style.display = "flex";
+                document.querySelector(".a").style.display = "flex";
+                document.querySelector(".b").style.display = "flex";
+                document.querySelector(".c").style.display = "flex";
+                document.querySelector(".d").style.display = "flex";
+                // let d1 = document.querySelector(".d").innerHTML
+                //fazer usando uma lista 
+
+            })
+        }
+
+        function clickk() {
+            document.querySelector(".menu").style.display = 'none'
+        }
+    </script>
+
+</body>
+
+</html>
